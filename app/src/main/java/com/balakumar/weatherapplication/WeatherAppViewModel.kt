@@ -41,9 +41,9 @@ init {
                 return@launch
             }
             if(response.isSuccessful && response.body() != null){
-                country.value= response.body()?.let { it.list.first() }
+                country.value= response.body()?.let { it.first() }
                 lat= country.value!!.latitude
-                lat= country.value!!.longitude
+                log= country.value!!.longitude
                 getReport()
             }
         }

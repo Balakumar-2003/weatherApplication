@@ -1,7 +1,7 @@
 package com.balakumar.weatherapplication.models
 
 data class Hourly(
-    val rain: List<Int>,
+    val rain: List<Double>,
     val relative_humidity_2m: List<Int>,
     val soil_moisture_0_to_1cm: List<Double>,
     val soil_temperature_0cm: List<Double>,

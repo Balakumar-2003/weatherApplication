@@ -1,6 +1,7 @@
 package com.balakumar.weatherapplication
 
 import android.os.Bundle
+import android.util.DisplayMetrics
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -28,10 +29,16 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        val displayMetrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(displayMetrics)
+
+
         setContent {
             WeatherApplicationTheme {
+                val screenWidth = displayMetrics.widthPixels.toFloat()
+                val screenHeight = displayMetrics.heightPixels.toFloat()
                 viewmodel=viewModel()
-                WeatherHome(viewModel = viewmodel)
+                WeatherHome(viewModel = viewmodel,screenWidth,screenHeight)
             }
         }
     }

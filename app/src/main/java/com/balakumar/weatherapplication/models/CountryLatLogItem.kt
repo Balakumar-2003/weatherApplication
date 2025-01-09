@@ -8,6 +8,3 @@ data class CountryLatLogItem(
     val state: String="Tamil Nadu"
 )
 
-data class CountryLatLog(
-    val list:List<CountryLatLogItem>
-)
